@@ -1,14 +1,13 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mastnac";
 
-$DB_HOST = 'localhost';
-$DB_USER = 'root';
-$DB_PASS = '';
-$DB_NAME = 'tareas';
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-$conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
-
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-} else {
-  echo "ok, coonection successful";
+// Verificar conexión
+if ($conn->connect_error) {
+  die("Conexión fallida: " . $conn->connect_error);
 }
